@@ -1,0 +1,646 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy;
+    color: #fff;
+  }
+  
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(74, 71, 71);
+    border-radius: 1vw;
+  }
+  
+  .main {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .loder {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #171616;
+    z-index: 9;
+  }
+  
+  .page1 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4vw;
+  }
+  
+  nav > h6 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.7vw;
+  }
+  
+  .nav-right {
+    display: flex;
+    gap: 1vw;
+  }
+  
+  .nav-right i {
+    display: none;
+  }
+  
+  .main-heading {
+    position: relative;
+    padding: 8vw;
+    margin-top: 6vw;
+    /* background-color: salmon; */
+  }
+  
+  .main-heading > h3 {
+    font-weight: 600;
+    font-size: 1vw;
+  }
+  
+  .main-heading > h1 {
+    font-weight: 600;
+    font-size: 6vw;
+    width: 60%;
+    line-height: 0.9;
+    margin-top: 2vw;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .nav-right > h3 {
+    font-weight: 500;
+    font-size: 0.8vw;
+  }
+  
+  .main-video {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -9;
+    top: 0;
+    left: 0;
+  }
+  
+  .main-video > video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.387);
+  }
+  
+  .main-video::after {
+    content: "";
+    position: absolute;
+    bottom: -0%;
+    height: 80%;
+    width: 100%;
+    z-index: 9;
+    left: 0;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 1) 85%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+  
+  .page2 {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    padding: 0 4vw;
+    display: flex;
+  }
+  
+  .page2-left {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    padding: 6vw;
+    background-color: #ffffff63;
+    border-radius: 2vw;
+  }
+  
+  .page2-left > h6 {
+    font-weight: 600;
+    color: #000;
+    font-size: 0.8vw;
+  }
+  
+  .page2-left > h6:nth-child(4) {
+    margin-top: 3vw;
+    position: relative;
+  }
+  
+  .page2-left > h6:nth-child(4)::before {
+    content: "";
+    width: 8%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    background-color: #00000054;
+  }
+  
+  .page2-left > h1 {
+    font-weight: 400;
+    line-height: 0.9;
+    margin-top: 2vw;
+    color: #000;
+  }
+  
+  .page2-left > p {
+    font-size: 1vw;
+    line-height: 1.4;
+    margin-top: 4vw;
+    color: #000;
+    opacity: 0.8;
+    width: 90%;
+  }
+  
+  .page2-right {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .page2-img {
+    height: 100%;
+    width: 90%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scaled {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  
+  .page2-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  }
+  
+  .overlay2 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.014);
+    top: 0;
+    left: 0;
+    padding: 2vw;
+  }
+  
+  .overlay2 > h3 {
+    font-weight: 600;
+    font-size: 0.8vw;
+  }
+  
+  .line {
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    margin-top: 1vw;
+  }
+  
+  .page3 {
+    position: relative;
+    height: 120vh;
+    width: 100%;
+    background-color: #171616;
+    margin-top: 4vw;
+    display: flex;
+    z-index: 999;
+  }
+  
+  .page3-left {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    padding: 0 4vw;
+  }
+  
+  .page3-left img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  }
+  
+  .page3-left-img1 {
+    height: 65%;
+    width: 100%;
+    margin-top: 2vw;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .page3-left-img2 {
+    height: 35%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    bottom: -5%;
+  }
+  
+  .page3-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.415);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    display: flex;
+    align-items: end;
+    padding: 2vw;
+    opacity: 0;
+  }
+  
+  .page3-overlay > h3 {
+    font-weight: 500;
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+  }
+  
+  .page3-overlay > h3 > span {
+    display: inline-block;
+    width: 1vw;
+    height: 1px;
+    background-color: rgba(255, 217, 0, 0.539);
+  }
+  
+  .page3-right {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2vw;
+  }
+  
+  .page3-right-text {
+    margin-top: 2vw;
+  }
+  
+  .page3-right-text > h3 {
+    font-weight: 600;
+    font-size: 1vw;
+  }
+  
+  .page3-right-text > h1 {
+    font-weight: 400;
+    line-height: 0.9;
+    margin-top: 1vw;
+    width: 90%;
+  }
+  
+  .page3-right-text > h6 {
+    font-size: 0.7vw;
+    font-weight: 600;
+    margin-top: 3vw;
+  }
+  
+  .page3-right-video {
+    position: relative;
+    height: 70%;
+    width: 100%;
+  }
+  
+  .page3-right-video > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .page3-video-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: end;
+    padding: 2vw;
+    opacity: 0;
+    background-color: #00000058;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  }
+  
+  .page3-video-overlay > h3 {
+    font-weight: 500;
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+  }
+  
+  .page3-video-overlay > h3 > span {
+    display: inline-block;
+    width: 1vw;
+    height: 1px;
+    background-color: rgba(255, 217, 0, 0.539);
+  }
+  
+  .page4 {
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    background-color: #fff;
+  }
+  
+  .page4-text {
+    width: 50%;
+  }
+  
+  .page4-text > h6 {
+    font-weight: 600;
+    color: #000;
+  }
+  
+  .page4-text > h1 {
+    font-weight: 500;
+    color: #000;
+    width: 65%;
+    line-height: 1;
+    margin-top: 2vw;
+  }
+  
+  .scroller {
+    display: flex;
+    background-color: #fff;
+    padding-top: 8vw;
+    padding-bottom: 6vw;
+    overflow: hidden;
+  }
+  
+  .scroller-box {
+    display: flex;
+    animation: scroller 30s linear infinite both;
+    /* gap: 8vw; */
+  }
+  
+  .scroller-box > img {
+    height: 2vw;
+    margin-left: 12vw;
+  }
+  
+  @keyframes scroller {
+    from {
+      transform: translate(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 4px));
+    }
+  }
+  
+  .page5 {
+    position: relative;
+    background-color: #171616;
+    height: 90vh;
+    width: 100%;
+  }
+  
+  .page5-dets {
+    padding: 10vw;
+  }
+  
+  .page5-dets > h6 {
+    font-weight: 600;
+  }
+  
+  .page5-dets > h1 {
+    font-weight: 400;
+    width: 70%;
+    line-height: 1.1;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+  }
+  
+  .contact {
+    display: flex;
+    margin-top: 4vw;
+  }
+  
+  .contact-elem {
+    width: 30%;
+  }
+  
+  .contact-elem > h6 {
+    font-weight: 600;
+    font-size: 0.7vw;
+  }
+  
+  .contact-elem > h3 {
+    font-weight: 400;
+    font-size: 1vw;
+    margin-top: 1.5vw;
+    width: 65%;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6vw;
+  }
+  
+  footer > h6 {
+    font-weight: 400;
+    opacity: 0.5;
+    font-size: 0.7vw;
+  }
+  
+  .footer-right {
+    display: flex;
+    gap: 1vw;
+  }
+  
+  .footer-right > h6 {
+    font-weight: 400;
+    opacity: 0.5;
+    font-size: 0.7vw;
+  }
+  
+  @media (max-width: 600px) {
+    nav > h6 {
+      font-weight: 500;
+      font-size: 2vw;
+    }
+  
+    .nav-right > h3 {
+      display: none;
+    }
+  
+    .nav-right > i {
+      display: block;
+      font-size: 2vw;
+    }
+  
+    .main-heading {
+      margin-top: 12vw;
+    }
+  
+    .main-heading > h3 {
+      font-weight: 500;
+      font-size: 4vw;
+    }
+  
+    .main-heading > h1 {
+      font-size: 8vw;
+      width: 80%;
+    }
+  
+    .page2 {
+      flex-direction: column;
+      gap: 2vw;
+    }
+  
+    .page2-left {
+      width: 100%;
+      height: 50%;
+    }
+  
+    .page2-right {
+      width: 100%;
+      height: 50%;
+    }
+  
+    .page2-img {
+      width: 100%;
+      border-radius: 2vw;
+    }
+  
+    .overlay2 > h3 {
+      font-size: 3vw;
+    }
+  
+    .page3-left {
+      height: 90%;
+    }
+  
+    .page3-right-text > h3 {
+      font-weight: 400;
+      font-size: 3vw;
+    }
+  
+    .page3-right-text > h6 {
+      font-size: 2vw;
+      font-weight: 400;
+    }
+  
+    .page3-right-text > h1 {
+      width: 100%;
+      font-size: 5vw;
+    }
+    .page4 {
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .page4-text {
+      text-align: center;
+      width: 75%;
+    }
+  
+    .page4-text > h6 {
+      font-size: 3vw;
+    }
+  
+    .page4-text > h1 {
+      width: 100%;
+    }
+  
+    .page5 {
+      height: 75vh;
+    }
+  
+    .page5-dets {
+      padding: 10vw 0;
+    }
+  
+    .page5-dets > h6 {
+      font-weight: 400;
+      font-size: 4vw;
+      padding: 0 10vw;
+    }
+    .page5-dets > h1 {
+      padding: 0 10vw;
+      width: 100%;
+    }
+  
+    .contact {
+      flex-direction: column;
+      padding: 0 10vw;
+    }
+  
+    .contact-elem {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 2vw;
+    }
+  
+    .contact-elem > h6 {
+      font-weight: 400;
+      font-size: 3vw;
+      white-space: nowrap;
+    }
+  
+    .contact-elem > h3 {
+      margin: 0;
+      width: fit-content;
+      font-size: 2vw;
+      font-weight: 300;
+      width: 30%;
+    }
+  
+    footer > h6 {
+      font-size: 2vw;
+    }
+  
+    .footer-right > h6 {
+      font-size: 2vw;
+    }
+  }
+  
